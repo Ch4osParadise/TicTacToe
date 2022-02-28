@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Medium";
+}
+
+body {
+    background-image: linear-gradient(to right, #0C5959, #0FBF4D);
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: #0C5959;
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: rgba(255, 255, 255, .9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.game-board-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 600px;
+    height: 600px;
+    margin: 30px auto;
+}
+
+.game-field {
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+    border: 2px solid #0C5959;
+    font-size: 150px;
+    background-color: rgba(255, 255, 255, .9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0FBF4D;
+    cursor: pointer;
+}
+
+.game-field:hover {
+    background-color: #C3F2B6;
+}
+
+.game-field-seted:hover{
+    background-color: rgb(252, 207, 207);
+}
+
+.player2-color {
+    color: #0C5959;
+
+}
+
+.btn-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    color: white;
+    background-color: #0FBF4D;
+    border: 2px solid #0C5959;
+    border-radius: 10px;
+    padding: 7px 12px;
+    outline: none;
+    transition: 0.5s;
+    color: #0C5959;
+    font-size: 1.5em;
+}
+
+.btn:hover {
+    background-color: rgba(15, 191, 77, 0.5);
+}
+
+.hidden {
+    display: none;
+}
