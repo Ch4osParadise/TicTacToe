@@ -42,9 +42,9 @@ export function gameControler() {
 
             board.setField(index, currentPlayer.sign);
             field.classList.add('game-field-seted');
-            endGamecheck()
+            endGameCheck()
             board.updateBoard(fieldContainers);
-            if(!isWinner && board.gameBoard.includes("")){
+            if(!(isWinner && board.gameBoard.includes(""))){
                 changeFlag();
                 currentPlayer = flag ? player1 : player2;
                 currentPlayerInfo()
@@ -52,7 +52,7 @@ export function gameControler() {
                 fieldContainers.forEach(element => {
                     element.classList.add('game-field-seted');
                 })
-            };
+            }
 
         })
     })
@@ -68,7 +68,7 @@ function changeFlag() {
 
 function currentPlayerInfo() {
     currentPlayerContainer.innerText = `Current Player : ${currentPlayer.sign}`;
-};
+}
 
 function reset() {
     board.clearBoard();
@@ -83,9 +83,8 @@ function reset() {
     isWinner = false;
 }
 
-function endGamecheck() {
+function endGameCheck() {
 
-    console.log(!board.gameBoard.includes("") && isWinner === false);
     winnigCombination.forEach(combination =>{
         if(board.gameBoard[combination[0]] === currentPlayer.sign && board.gameBoard[combination[1]] === currentPlayer.sign && board.gameBoard[combination[2]] === currentPlayer.sign){
             currentPlayerContainer.innerText = `${currentPlayer.sign} WON !!!`;
